@@ -1,0 +1,83 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    background-color: #222242;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+/* Wrapper styles */
+.wrapper {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Stopwatch display styles */
+.wrapper p {
+    position: relative;
+    display: inline-block;
+    color: #5f44d6;
+    z-index: 9999;
+    font-size: 48px;
+    margin-bottom: 120px;
+}
+
+/* Shine effect styles */
+.wrapper p::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-color: #151538;
+    z-index: -1;
+    border-radius: 50%;
+    left: -25%;
+    top: -175%;
+    animation-name: shine;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+/* Button styles */
+button {
+    background-color: #222242;
+    padding: 10px 38px;
+    margin-top: 50px;
+    border: 1px solid #A9A9A9;
+    border-radius: 28px;
+    color: #fff;
+    transition: all .2s ease;
+    outline: 0;
+}
+
+/* Button spacing */
+button:not(:last-child) {
+    margin-right: 20px;
+}
+
+/* Button hover/focus styles */
+button:hover,
+button:focus {
+    border-color: #F6B400;
+    color: #F6B400;
+    box-shadow: 0px 4px 27px -12px #F6B400;
+}
+
+/* Shine animation */
+@keyframes shine {
+    0%, 100% {
+        box-shadow: 0px 0px 32px -12px rgba(33, 160, 40, .5);
+    }
+    50% {
+        box-shadow: 0px 0px 32px 3px rgba(33, 160, 40, .5);
+    }
+}
